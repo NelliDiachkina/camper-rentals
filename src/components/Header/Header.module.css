@@ -16,6 +16,7 @@
 }
 
 .navLink {
+  display: block;
   color: var(--text-color-main);
   font-weight: 500;
 }

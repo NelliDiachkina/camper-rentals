@@ -5,7 +5,7 @@ import Loader from '../Loader/Loader';
 import SharedLayout from '../SharedLayout/SharedLayout';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
-const CatalogPage = lazy(() => import('../../pages/СatalogPage/СatalogPage'));
+const CatalogPage = lazy(() => import('../../pages/CatalogPage/CatalogPage'));
 const CamperDetailsPage = lazy(() =>
   import('../../pages/CamperDetailsPage/CamperDetailsPage')
 );

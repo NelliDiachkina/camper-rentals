@@ -26,7 +26,7 @@ export const campersSlice = createSlice({
       .addCase(getAllCampers.pending, handlePending)
       .addCase(getAllCampers.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.items = payload;
+        state.items = payload.items;
       })
       .addCase(getAllCampers.rejected, handleRejected)
       .addCase(getCamperById.pending, handlePending)

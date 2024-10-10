@@ -50,6 +50,6 @@
   transition: background-color var(--animation);
 }
 
-.btn:hover {
+.heroBtn:hover {
   background-color: var(--button-hover);
 }

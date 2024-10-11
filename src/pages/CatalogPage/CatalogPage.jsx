@@ -2,7 +2,6 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getAllCampers } from '../../redux/campers/operations';
 import CampersList from '../../components/CampersList/CampersList';
-import Container from '../../components/Container/Container';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -13,9 +12,7 @@ const CatalogPage = () => {
 
   return (
     <>
-      <Container>
-        <CampersList />
-      </Container>
+      <CampersList />
     </>
   );
 };

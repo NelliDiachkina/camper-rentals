@@ -1,7 +1,13 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import css from './HeroSection.module.css';
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/catalog');
+  };
+
   return (
     <section className={css.heroSection}>
       <div className={css.contentWrapper}>
@@ -10,13 +16,9 @@ const HeroSection = () => {
           You can find everything you want in our catalog
         </p>
       </div>
-      <Link
-        className={css.heroBtn}
-        to="/catalog"
-        aria-label="Go to the catalog page"
-      >
+      <button type="button" className={css.heroBtn} onClick={handleClick}>
         View Now
-      </Link>
+      </button>
     </section>
   );
 };

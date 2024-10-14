@@ -1,0 +1,57 @@
+.fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  max-width: 360px;
+}
+
+.label {
+  display: flex;
+  width: 112px;
+  height: 96px;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid var(--gray-light);
+  cursor: pointer;
+  transition: border-color var(--animation);
+}
+
+.input {
+  display: none;
+}
+
+.checked {
+  border-color: var(--button);
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.inputsWrapper {
+  display: flex;
+  row-gap: 8px;
+  column-gap: 12px;
+  flex-wrap: wrap;
+}
+
+.legend {
+  color: var(--text-color-main);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.line {
+  border: none;
+  height: 1px;
+  background-color: var(--gray-light);
+  margin: 24px 0;
+}

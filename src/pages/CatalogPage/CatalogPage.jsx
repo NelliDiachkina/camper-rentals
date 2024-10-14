@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { getAllCampers } from '../../redux/campers/operations';
 import CampersList from '../../components/CampersList/CampersList';
 import Container from '../../components/Container/Container';
+import FilterForm from '../../components/FilterForm/FilterForm';
+import PageContainer from '../../components/PageContainer/PageContainer';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -14,7 +16,10 @@ const CatalogPage = () => {
   return (
     <>
       <Container>
-        <CampersList />
+        <PageContainer>
+          <FilterForm />
+          <CampersList />
+        </PageContainer>
       </Container>
     </>
   );

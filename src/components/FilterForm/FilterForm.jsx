@@ -21,7 +21,6 @@ const FilterForm = () => {
     );
   };
 
-  console.log(selectCheckboxes);
   return (
     <Equipment
       options={equipment}

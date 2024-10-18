@@ -1,32 +1,17 @@
-import { useState } from 'react';
 import Equipment from '../Equipment/Equipment';
 
-const equipment = {
-  AC: 'AC',
-  Automatic: 'automatic',
-  Kitchen: 'kitchen',
-  TV: 'TV',
-  Bathroom: 'bathroom',
-};
-
 const FilterForm = () => {
-  const [selectCheckboxes, setSelectCheckboxes] = useState([]);
+  // const [selectCheckboxes, setSelectCheckboxes] = useState([]);
 
-  const handleCheckboxChange = e => {
-    const { value, checked } = e.target;
-    setSelectCheckboxes(prevSelected =>
-      checked
-        ? [...prevSelected, value]
-        : prevSelected.filter(checkbox => checkbox !== value)
-    );
-  };
+  // const handleCheckboxChange = e => {
+  //   const { value, checked } = e.target;
+  //   setSelectCheckboxes(prevSelected =>
+  //     checked
+  //       ? [...prevSelected, value]
+  //       : prevSelected.filter(checkbox => checkbox !== value)
+  //   );
+  // };
 
-  return (
-    <Equipment
-      options={equipment}
-      selectedValues={selectCheckboxes}
-      handleChange={handleCheckboxChange}
-    />
-  );
+  return <Equipment />;
 };
 export default FilterForm;

@@ -6,7 +6,7 @@ const CategoriesItem = ({ text }) => {
     <>
       <li className={css.categoriesListItem}>
         <svg height={20} width={20} className={css.icon}>
-          <use href={`${sprite}#icon-${text}`} />
+          <use href={`${sprite}#${text}`} />
         </svg>
         <p>{text}</p>
       </li>

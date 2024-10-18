@@ -4,12 +4,12 @@ import sprite from '../../assets/icons/sprite.svg';
 const CategoriesItem = ({ text }) => {
   return (
     <>
-      <div className={css.container}>
-        <svg height={20} width={20}>
+      <li className={css.categoriesListItem}>
+        <svg height={20} width={20} className={css.icon}>
           <use href={`${sprite}#icon-${text}`} />
         </svg>
         <p>{text}</p>
-      </div>
+      </li>
     </>
   );
 };

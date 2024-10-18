@@ -16,7 +16,12 @@ const HeroSection = () => {
           You can find everything you want in our catalog
         </p>
       </div>
-      <button type="button" className={css.heroBtn} onClick={handleClick}>
+      <button
+        type="button"
+        className={css.heroBtn}
+        onClick={handleClick}
+        aria-label="Go to catalog page of campers"
+      >
         View Now
       </button>
     </section>

@@ -36,10 +36,13 @@
 }
 
 .heroBtn {
-  display: inline-block;
+  width: 173px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 40px;
   font-family: inherit;
-  padding: 16px 60px;
   border-radius: 200px;
   color: var(--background-color);
   font-size: 16px;

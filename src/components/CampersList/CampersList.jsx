@@ -7,10 +7,10 @@ const CampersList = () => {
   const campers = useSelector(selectCampers);
 
   return (
-    <ul className={css.list}>
+    <ul className={css.campersList}>
       {campers.map(camper => {
         return (
-          <li key={camper.id} className={css.item}>
+          <li key={camper.id} className={css.campersListItem}>
             {<CamperItem camper={camper} />}
           </li>
         );

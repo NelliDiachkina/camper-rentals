@@ -10,7 +10,7 @@ const CamperItem = ({ camper }) => {
   };
 
   return (
-    <div className={css.container}>
+    <>
       <img
         className={css.img}
         src={camper.gallery[0].original}
@@ -18,7 +18,7 @@ const CamperItem = ({ camper }) => {
         width="292"
         height="320"
       />
-      <div className={css.content}>
+      <div>
         <div className={css.wrapperContent}>
           <h2 className={css.title}>{camper.name}</h2>
           <p className={css.price}>€{camper.price}.00</p>
@@ -48,7 +48,7 @@ const CamperItem = ({ camper }) => {
           Show more
         </button>
       </div>
-    </div>
+    </>
   );
 };
 

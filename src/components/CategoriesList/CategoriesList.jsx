@@ -14,10 +14,22 @@ const CategoriesList = ({ camper }) => {
     { condition: camper.TV, text: 'TV', id: 'tv' },
     { condition: camper.bathroom, text: 'Bathroom', id: 'bathroom' },
     { condition: camper.radio, text: 'Radio', id: 'radio' },
+    { condition: camper.water, text: 'Water', id: 'water' },
+    { condition: camper.gas, text: 'Gas', id: 'gas' },
+    {
+      condition: camper.refrigerator,
+      text: 'Refrigerator',
+      id: 'refrigerator',
+    },
+    {
+      condition: camper.microwave,
+      text: 'Microwave',
+      id: 'microwave',
+    },
   ];
 
   return (
-    <div className={css.wrapper}>
+    <ul className={css.categoriesList}>
       {categories
         .filter(category => category.condition)
         .map(category => (
@@ -26,7 +38,7 @@ const CategoriesList = ({ camper }) => {
             text={category.text}
           />
         ))}
-    </div>
+    </ul>
   );
 };
 

@@ -3,12 +3,7 @@ import sprite from '../../assets/icons/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectForm } from '../../redux/filters/selectors';
 import { setForm } from '../../redux/filters/slice';
-
-const typeFormOptions = [
-  { name: 'Van', value: 'panelTruck' },
-  { name: 'Fully Integrated', value: 'fullyIntegrated' },
-  { name: 'Alcove', value: 'alcove' },
-];
+import { typeFormOptions } from './types';
 
 export const Type = () => {
   const dispatch = useDispatch();

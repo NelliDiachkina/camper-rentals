@@ -23,8 +23,11 @@ const filtersSlice = createSlice({
     setForm: (state, { payload }) => {
       state.form = payload;
     },
+    setLocation: (state, { payload }) => {
+      state.location = payload;
+    },
   },
 });
 
-export const { toggleFilters, setForm } = filtersSlice.actions;
+export const { toggleFilters, setForm, setLocation } = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;

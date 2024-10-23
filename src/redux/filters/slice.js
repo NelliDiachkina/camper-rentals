@@ -9,6 +9,7 @@ export const initialState = {
     bathroom: false,
   },
   form: '',
+  location: '',
 };
 
 const filtersSlice = createSlice({

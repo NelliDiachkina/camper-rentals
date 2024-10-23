@@ -1,15 +1,13 @@
 import css from './CategoriesItem.module.css';
 import sprite from '../../assets/icons/sprite.svg';
 
-const CategoriesItem = ({ text }) => {
+const CategoriesItem = ({ text, icon }) => {
   return (
     <>
-      <li className={css.categoriesListItem}>
-        <svg height={20} width={20} className={css.icon}>
-          <use href={`${sprite}#${text}`} />
-        </svg>
-        <p>{text}</p>
-      </li>
+      <svg height={20} width={20} className={css.icon}>
+        <use href={`${sprite}#${icon}`} />
+      </svg>
+      <p>{text}</p>
     </>
   );
 };

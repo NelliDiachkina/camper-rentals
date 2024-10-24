@@ -3,6 +3,7 @@ import { Suspense, lazy } from 'react';
 import Header from '../Header/Header';
 import Loader from '../Loader/Loader';
 import SharedLayout from '../SharedLayout/SharedLayout';
+import { HelmetProvider } from 'react-helmet-async';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const CatalogPage = lazy(() => import('../../pages/CatalogPage/CatalogPage'));
@@ -15,7 +16,7 @@ const NotFoundPage = lazy(() =>
 
 function App() {
   return (
-    <>
+    <HelmetProvider>
       <Header />
       <SharedLayout>
         <Suspense fallback={<Loader />}>
@@ -27,7 +28,7 @@ function App() {
           </Routes>
         </Suspense>
       </SharedLayout>
-    </>
+    </HelmetProvider>
   );
 }
 

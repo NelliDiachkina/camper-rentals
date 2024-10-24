@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getAllCampers } from '../../redux/campers/operations';
@@ -15,6 +16,9 @@ const CatalogPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Catalog</title>
+      </Helmet>
       <Container>
         <PageContainer>
           <FilterForm />

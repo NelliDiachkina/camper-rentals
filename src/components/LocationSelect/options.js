@@ -1,10 +1,10 @@
 export const optionsList = [
-  'Ukraine, Kyiv',
-  'Ukraine, Poltava',
-  'Ukraine, Dnipro',
-  'Ukraine, Odesa',
-  'Ukraine, Kharkiv',
-  'Ukraine, Sumy',
-  'Ukraine, Lviv',
-  'Ukraine, Kharkiv',
+  'Kyiv, Ukraine',
+  'Dnipro, Ukraine',
+  'Poltava, Ukraine',
+  'Odesa, Ukraine',
+  'Kharkiv, Ukraine',
+  'Sumy, Ukraine',
+  'Lviv, Ukraine',
+  'Kharkiv, Ukraine',
 ];

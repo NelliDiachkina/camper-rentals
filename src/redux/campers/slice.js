@@ -9,6 +9,7 @@ const initialState = {
 };
 
 const handlePending = state => {
+  state.items = [];
   state.isError = null;
   state.isLoading = true;
 };

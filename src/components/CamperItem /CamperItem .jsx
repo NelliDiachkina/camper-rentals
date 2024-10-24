@@ -32,7 +32,7 @@ const CamperItem = ({ camper }) => {
           </div>
           <div className={css.item}>
             <svg width={16} height={16} aria-label="Location">
-              <use href={`${sprite}#icon-map`} />
+              <use href={`${sprite}#map`} />
             </svg>
             <p>{camper.location}</p>
           </div>

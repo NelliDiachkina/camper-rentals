@@ -3,12 +3,13 @@ import { API } from '../../helpers/axios';
 
 export const getAllCampers = createAsyncThunk(
   'campers/getAll',
-  async (_, thunkAPI) => {
+  async (filters = {}, thunkAPI) => {
     try {
-      const response = await API.get('/campers');
+      const params = { ...filters };
+      const response = await API.get('/campers', { params });
       return response.data;
     } catch (error) {
-      thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -20,7 +21,7 @@ export const getCamperById = createAsyncThunk(
       const response = await API.get(`/campers/${id}`);
       return response.data;
     } catch (error) {
-      thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );

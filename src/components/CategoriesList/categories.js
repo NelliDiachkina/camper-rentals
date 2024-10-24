@@ -40,4 +40,22 @@ export const getCategories = camper => [
     id: 'microwave',
     icon: 'Microwave',
   },
+  {
+    condition: camper.form === 'panelTruck',
+    text: 'Van',
+    id: 'van',
+    icon: 'panelTruck',
+  },
+  {
+    condition: camper.form === 'alcove',
+    text: 'Alcove',
+    id: 'alcove',
+    icon: 'alcove',
+  },
+  {
+    condition: camper.form === 'fullyIntegrated',
+    text: 'Fully Integrated',
+    id: 'fullyIntegrated',
+    icon: 'fullyIntegrated',
+  },
 ];

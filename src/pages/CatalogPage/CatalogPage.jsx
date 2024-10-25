@@ -6,16 +6,17 @@ import CampersList from '../../components/CampersList/CampersList';
 import Container from '../../components/Container/Container';
 import PageContainer from '../../components/PageContainer/PageContainer';
 import Filters from '../../components/Filters/Filters';
-import { selectIsLoading } from '../../redux/campers/selectors';
+import { selectIsLoading, selectLimit } from '../../redux/campers/selectors';
 import Loader from '../../components/Loader/Loader';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
+  const limit = useSelector(selectLimit);
   const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
-    dispatch(getAllCampers());
-  }, [dispatch]);
+    dispatch(getAllCampers({ page: 1, limit }));
+  }, [dispatch, limit]);
 
   return (
     <>

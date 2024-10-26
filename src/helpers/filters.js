@@ -24,6 +24,6 @@ export const getFilters = ({ page, limit, location, equipment, form }) => {
   if (form) {
     filters.form = form;
   }
-  console.log(filters);
+
   return filters;
 };

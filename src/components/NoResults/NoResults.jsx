@@ -4,7 +4,7 @@ import { TbCamper } from 'react-icons/tb';
 export const NoResults = () => {
   return (
     <div className={css.container}>
-      <TbCamper size={280} className={css.icon} />
+      <TbCamper size={220} className={css.icon} />
       <h2 className={css.title}>No Campers Found</h2>
       <div>
         <p>No campers found for the selected criteria</p>

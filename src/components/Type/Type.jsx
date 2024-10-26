@@ -9,8 +9,12 @@ export const Type = () => {
   const dispatch = useDispatch();
   const selectedFormType = useSelector(selectForm);
 
-  const handleChange = e => {
-    dispatch(setForm(e.target.value));
+  const handleClick = value => {
+    if (selectedFormType === value) {
+      dispatch(setForm(''));
+    } else {
+      dispatch(setForm(value));
+    }
   };
 
   return (
@@ -29,9 +33,9 @@ export const Type = () => {
                 className={css.input}
                 type="radio"
                 name="typeForm"
+                aria-label={name}
                 value={value}
-                checked={selectedFormType === value}
-                onChange={handleChange}
+                onClick={() => handleClick(value)}
               />
               <div className={css.contentWrapper}>
                 <svg width={32} height={32}>

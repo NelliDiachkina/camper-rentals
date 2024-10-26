@@ -25,6 +25,7 @@ const handlePending = state => {
 const handleRejected = (state, { payload }) => {
   state.isLoading = false;
   state.isError = payload;
+  state.items = [];
 };
 
 export const campersSlice = createSlice({
@@ -43,7 +44,11 @@ export const campersSlice = createSlice({
       .addCase(getAllCampers.pending, handlePending)
       .addCase(getAllCampers.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.items = payload.items;
+        if (state.page === 1) {
+          state.items = payload.items;
+        } else {
+          state.items.push(...payload.items);
+        }
         state.totalItems = payload.total;
         calculateHasNextPage(state);
       })

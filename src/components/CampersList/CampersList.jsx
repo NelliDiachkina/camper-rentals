@@ -18,6 +18,7 @@ import {
 import { getAllCampers } from '../../redux/campers/operations';
 import { getFilters } from '../../helpers/filters';
 import { incrementPage } from '../../redux/campers/slice';
+import Loader from '../../components/Loader/Loader';
 
 const CampersList = () => {
   const dispatch = useDispatch();
@@ -58,6 +59,7 @@ const CampersList = () => {
               );
             })}
           </ul>
+          {isLoading && <Loader />}
           {hasNextPage && (
             <button
               className={css.btn}

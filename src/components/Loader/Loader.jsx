@@ -1,15 +1,10 @@
-import { InfinitySpin } from 'react-loader-spinner';
+import { SyncLoader } from 'react-spinners';
 import css from './Loader.module.css';
 
-const Loader = () => {
+export const Loader = () => {
   return (
-    <div className={css.wrapper}>
-      <InfinitySpin
-        visible={true}
-        width="320"
-        color="#e44848"
-        ariaLabel="infinity-spin-loading"
-      />
+    <div className={css.wrapperLoader}>
+      <SyncLoader color="#e44848" aria-label="Loading Spinner" />
     </div>
   );
 };

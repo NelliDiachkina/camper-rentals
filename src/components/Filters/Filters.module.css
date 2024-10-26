@@ -10,25 +10,3 @@
   color: var(--text);
   margin-top: 40px;
 }
-
-.btn {
-  width: 166px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 16px;
-  border-radius: 200px;
-  background-color: var(--button);
-  color: var(--background-color);
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: -0.08px;
-  margin-top: 40px;
-  transition: background-color var(--animation);
-}
-
-.btn:hover {
-  background-color: var(--button-hover);
-}

@@ -25,7 +25,7 @@
   align-items: center;
   gap: 16px;
   font-weight: 400;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .item,
@@ -37,13 +37,12 @@
 
 .itemLocation {
   gap: 8px;
-  padding: 8px;
-  transition: box-shadow var(--animation), font-weight var(--animation);
+  transition: text-shadow var(--animation), font-weight var(--animation);
 }
 
 .activeLocation {
   font-weight: 600;
-  box-shadow: 2px 4px 6px var(--gray-light);
+  text-shadow: 6px 6px 8px var(--Gray);
 }
 
 .btn {

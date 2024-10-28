@@ -21,6 +21,7 @@
   height: 100%;
   border-radius: 10px;
   border: 1px solid var(--gray-light);
+  box-shadow: 2px 4px 6px var(--gray-light);
   transition: border-color var(--animation), box-shadow var(--animation),
     background-color var(--animation);
 }

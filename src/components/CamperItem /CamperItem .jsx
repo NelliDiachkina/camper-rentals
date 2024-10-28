@@ -1,15 +1,27 @@
 import CategoriesList from '../CategoriesList/CategoriesList';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import sprite from '../../assets/icons/sprite.svg';
 import css from './CamperItem.module.css';
 import { selectLocation } from '../../redux/filters/selectors';
+import { toggleFavorites } from '../../redux/favorites/slice';
+import { selectFavoritesList } from '../../redux/favorites/selectors';
 
 const CamperItem = ({ camper }) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const selectedLocation = useSelector(selectLocation);
+  const favoritesList = useSelector(selectFavoritesList);
+  const isFavorite = favoritesList.includes(camper.id);
+  const isSelectedLocation =
+    selectedLocation.split(',')[0] === camper.location.split(',')[1].trim();
+
   const handleClick = () => {
     navigate(`/catalog/${camper.id}`);
+  };
+
+  const handleFavoriteClick = () => {
+    dispatch(toggleFavorites(camper.id));
   };
 
   return (
@@ -24,7 +36,22 @@ const CamperItem = ({ camper }) => {
       <div>
         <div className={css.wrapperContent}>
           <h2 className={css.title}>{camper.name}</h2>
-          <p className={css.price}>€{camper.price}.00</p>
+          <div className={css.wrapperItemContent}>
+            <p className={css.price}>€{camper.price}.00</p>
+            <button
+              className={`${css.btnHeart} ${isFavorite ? css.active : ''}`}
+            >
+              <svg
+                width={24}
+                height={24}
+                className={css.icon}
+                aria-label="Add to favorites"
+                onClick={handleFavoriteClick}
+              >
+                <use href={`${sprite}#heart`} />
+              </svg>
+            </button>
+          </div>
         </div>
         <div className={css.wrapperItem}>
           <div className={css.item}>
@@ -34,11 +61,8 @@ const CamperItem = ({ camper }) => {
             <p>{`${camper.rating}(${camper.reviews.length} Reviews)`}</p>
           </div>
           <div
-            className={`${css.item} ${
-              selectedLocation.split(',')[0] ===
-              camper.location.split(',')[1].trim()
-                ? css.active
-                : ''
+            className={`${css.itemLocation} ${
+              isSelectedLocation ? css.activeLocation : ''
             }`}
           >
             <svg

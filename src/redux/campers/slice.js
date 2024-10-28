@@ -8,7 +8,7 @@ const initialState = {
   isError: null,
   page: 1,
   limit: 4,
-  totalItems: null,
+  totalItems: 0,
   hasNextPage: false,
 };
 
@@ -26,6 +26,7 @@ const handleRejected = (state, { payload }) => {
   state.isLoading = false;
   state.isError = payload;
   state.items = [];
+  state.totalItems = 0;
 };
 
 export const campersSlice = createSlice({

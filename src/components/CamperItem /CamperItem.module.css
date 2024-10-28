@@ -1,6 +1,6 @@
 .wrapperContent {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   margin-bottom: 8px;
 }
@@ -13,23 +13,37 @@
   border-radius: 10px;
 }
 
+.wrapperItemContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
 .wrapperItem {
   display: flex;
   align-items: center;
+  gap: 16px;
   font-weight: 400;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
-.item {
+.item,
+.itemLocation {
   display: flex;
   align-items: center;
   gap: 4px;
-  padding: 8px 16px;
-  transition: border-bottom var(--animation);
 }
 
-.active {
-  border-bottom: 2px solid var(--Rating);
+.itemLocation {
+  gap: 8px;
+  padding: 8px;
+  transition: box-shadow var(--animation), font-weight var(--animation);
+}
+
+.activeLocation {
+  font-weight: 600;
+  box-shadow: 2px 4px 6px var(--gray-light);
 }
 
 .btn {
@@ -62,11 +76,25 @@
 }
 
 .description {
+  display: -webkit-box;
+  width: 525px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
   overflow: hidden;
   color: var(--text);
   text-overflow: ellipsis;
-  font-weight: 400;
   margin-bottom: 24px;
+}
+
+.btnHeart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.active {
+  color: var(--button);
 }
 
 .icon {

@@ -21,5 +21,6 @@
 }
 
 .active {
-  background-color: var(--Rating);
+  color: var(--background-color);
+  background-color: var(--Gray);
 }

@@ -19,6 +19,7 @@
   border: 1px solid var(--gray-light);
   background-color: var(--background-color);
   max-width: 890px;
+  box-shadow: 2px 4px 6px var(--gray-light);
 }
 
 .btn {

@@ -1,12 +1,13 @@
 .header {
-  max-width: 1440px;
-  margin: 0 auto;
   background-color: var(--background);
   border-bottom: 1px solid var(--border);
-  padding: 24px 64px;
+}
+
+.nav {
+  padding: 24px 0px;
   display: flex;
   align-items: center;
-  gap: 450px;
+  column-gap: 450px;
 }
 
 .navList {

@@ -1,10 +1,13 @@
 import CategoriesList from '../CategoriesList/CategoriesList';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import sprite from '../../assets/icons/sprite.svg';
 import css from './CamperItem.module.css';
+import { selectLocation } from '../../redux/filters/selectors';
 
 const CamperItem = ({ camper }) => {
   const navigate = useNavigate();
+  const selectedLocation = useSelector(selectLocation);
   const handleClick = () => {
     navigate(`/catalog/${camper.id}`);
   };
@@ -30,8 +33,20 @@ const CamperItem = ({ camper }) => {
             </svg>
             <p>{`${camper.rating}(${camper.reviews.length} Reviews)`}</p>
           </div>
-          <div className={css.item}>
-            <svg width={16} height={16} aria-label="Location">
+          <div
+            className={`${css.item} ${
+              selectedLocation.split(',')[0] ===
+              camper.location.split(',')[1].trim()
+                ? css.active
+                : ''
+            }`}
+          >
+            <svg
+              width={16}
+              height={16}
+              aria-label="Location"
+              className={css.icon}
+            >
               <use href={`${sprite}#map`} />
             </svg>
             <p>{camper.location}</p>

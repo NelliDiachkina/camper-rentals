@@ -2,7 +2,7 @@ export const getCategories = camper => [
   {
     condition: camper.transmission === 'automatic',
     text: 'Automatic',
-    id: 'transmission',
+    id: 'automatic',
     icon: 'automatic',
   },
   {
@@ -17,8 +17,8 @@ export const getCategories = camper => [
     id: 'kitchen',
     icon: 'kitchen',
   },
-  { condition: camper.AC, text: 'AC', id: 'ac', icon: 'AC' },
-  { condition: camper.TV, text: 'TV', id: 'tv', icon: 'TV' },
+  { condition: camper.AC, text: 'AC', id: 'AC', icon: 'AC' },
+  { condition: camper.TV, text: 'TV', id: 'TV', icon: 'TV' },
   {
     condition: camper.bathroom,
     text: 'Bathroom',
@@ -43,7 +43,7 @@ export const getCategories = camper => [
   {
     condition: camper.form === 'panelTruck',
     text: 'Van',
-    id: 'van',
+    id: 'panelTruck',
     icon: 'panelTruck',
   },
   {

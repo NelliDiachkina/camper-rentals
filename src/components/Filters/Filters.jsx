@@ -2,6 +2,7 @@ import css from './Filters.module.css';
 import Equipment from '../Equipment/Equipment';
 import Type from '../Type/Type';
 import LocationSelect from '../LocationSelect/LocationSelect';
+import Information from '../Information/Information';
 
 const Filters = () => {
   return (
@@ -10,6 +11,7 @@ const Filters = () => {
       <h3 className={css.title}>Filters</h3>
       <Equipment />
       <Type />
+      <Information />
     </aside>
   );
 };

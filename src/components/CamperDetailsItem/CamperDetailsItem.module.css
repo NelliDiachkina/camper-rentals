@@ -26,15 +26,21 @@
 
 .camperGallery {
   display: flex;
-  justify-content: flex-start;
-  gap: 48px;
-  height: 312px;
+  justify-content: space-between;
   margin-top: 28px;
+}
+
+.camperGalleryItem {
+  border-radius: 10px;
+  width: calc((100% - 2 * 24px) / 3);
+  height: 312px;
+  box-shadow: 2px 4px 6px var(--gray-light);
 }
 
 .camperGalleryImg {
   border-radius: 10px;
   height: 100%;
+  width: 100%;
   object-fit: cover;
   object-position: center;
 }

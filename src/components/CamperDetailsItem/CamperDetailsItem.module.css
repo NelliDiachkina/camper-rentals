@@ -1,0 +1,45 @@
+.camperSection {
+  padding-top: 48px;
+}
+
+.wrapperItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 400;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.title,
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.camperGallery {
+  display: flex;
+  justify-content: flex-start;
+  gap: 48px;
+  height: 312px;
+  margin-top: 28px;
+}
+
+.camperGalleryImg {
+  border-radius: 10px;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.description {
+  color: var(--text);
+  margin-top: 28px;
+}

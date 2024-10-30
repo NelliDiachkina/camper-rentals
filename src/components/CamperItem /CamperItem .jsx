@@ -1,5 +1,5 @@
 import CategoriesList from '../CategoriesList/CategoriesList';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import sprite from '../../assets/icons/sprite.svg';
 import css from './CamperItem.module.css';
@@ -9,16 +9,11 @@ import { selectFavoritesList } from '../../redux/favorites/selectors';
 
 const CamperItem = ({ camper }) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const selectedLocation = useSelector(selectLocation);
   const favoritesList = useSelector(selectFavoritesList);
   const isFavorite = favoritesList.includes(camper.id);
   const isSelectedLocation =
     selectedLocation.split(',')[0] === camper.location.split(',')[1].trim();
-
-  const handleClick = () => {
-    navigate(`/catalog/${camper.id}`);
-  };
 
   const handleFavoriteClick = () => {
     dispatch(toggleFavorites(camper.id));
@@ -37,7 +32,7 @@ const CamperItem = ({ camper }) => {
         <div className={css.wrapperContent}>
           <h2 className={css.title}>{camper.name}</h2>
           <div className={css.wrapperItemContent}>
-            <p className={css.price}>€{camper.price}.00</p>
+            <p className={css.price}>{`€${camper.price.toFixed(2)}`}</p>
             <button
               className={`${css.btnHeart} ${isFavorite ? css.active : ''}`}
             >
@@ -78,14 +73,15 @@ const CamperItem = ({ camper }) => {
         </div>
         <p className={css.description}>{camper.description}</p>
         <CategoriesList camper={camper} />
-        <button
+        <Link
+          to={`/catalog/${camper.id}`}
+          target="_blank"
+          rel="noopener noreferrer"
           className={css.btn}
-          type="button"
-          onClick={handleClick}
           aria-label="Show more information about camper"
         >
           Show more
-        </button>
+        </Link>
       </div>
     </>
   );

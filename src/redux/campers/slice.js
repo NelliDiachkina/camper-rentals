@@ -3,7 +3,7 @@ import { getAllCampers, getCamperById } from './operations';
 
 const initialState = {
   items: [],
-  itemById: {},
+  itemById: null,
   isLoading: false,
   isError: null,
   page: 1,
@@ -25,8 +25,6 @@ const handlePending = state => {
 const handleRejected = (state, { payload }) => {
   state.isLoading = false;
   state.isError = payload;
-  state.items = [];
-  state.totalItems = 0;
 };
 
 export const campersSlice = createSlice({
@@ -53,13 +51,20 @@ export const campersSlice = createSlice({
         state.totalItems = payload.total;
         calculateHasNextPage(state);
       })
-      .addCase(getAllCampers.rejected, handleRejected)
+      .addCase(getAllCampers.rejected, (state, action) => {
+        handleRejected(state, action);
+        state.items = [];
+        state.totalItems = 0;
+      })
       .addCase(getCamperById.pending, handlePending)
       .addCase(getCamperById.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.itemById = payload;
       })
-      .addCase(getCamperById.rejected, handleRejected);
+      .addCase(getCamperById.rejected, (state, action) => {
+        handleRejected(state, action);
+        state.itemById = null;
+      });
   },
 });
 

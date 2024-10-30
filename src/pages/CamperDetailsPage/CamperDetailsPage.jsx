@@ -9,7 +9,6 @@ import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { getCamperById } from '../../redux/campers/operations';
 import CamperDetailsItem from '../../components/CamperDetailsItem/CamperDetailsItem';
-import { NoResults } from '../../components/NoResults/NoResults';
 import Loader from '../../components/Loader/Loader';
 
 const CamperDetailsPage = () => {
@@ -29,7 +28,7 @@ const CamperDetailsPage = () => {
       </Helmet>
       <Container>
         {isLoading && <Loader />}
-        {camper ? <CamperDetailsItem camper={camper} /> : <NoResults />}
+        {camper && <CamperDetailsItem camper={camper} />}
       </Container>
     </>
   );

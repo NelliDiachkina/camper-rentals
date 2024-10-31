@@ -74,7 +74,7 @@ const CamperItem = ({ camper }) => {
         <p className={css.description}>{camper.description}</p>
         <CategoriesList camper={camper} />
         <Link
-          to={`/catalog/${camper.id}`}
+          to={`/catalog/${camper.id}/features`}
           target="_blank"
           rel="noopener noreferrer"
           className={css.btn}

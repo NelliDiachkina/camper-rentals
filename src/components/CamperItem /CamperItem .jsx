@@ -75,8 +75,6 @@ const CamperItem = ({ camper }) => {
         <CategoriesList camper={camper} />
         <Link
           to={`/catalog/${camper.id}/features`}
-          target="_blank"
-          rel="noopener noreferrer"
           className={css.btn}
           aria-label="Show more information about camper"
         >

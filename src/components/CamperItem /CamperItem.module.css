@@ -42,7 +42,7 @@
 
 .activeLocation {
   font-weight: 600;
-  text-shadow: 6px 6px 8px var(--Gray);
+  color: var(--button);
 }
 
 .btn {

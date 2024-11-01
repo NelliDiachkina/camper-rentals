@@ -1,7 +1,11 @@
 import css from './CamperDetailsItem.module.css';
 import sprite from '../../assets/icons/sprite.svg';
+import { useSelector } from 'react-redux';
+import { selectCamperById } from '../../redux/campers/selectors';
 
-const CamperDetailsItem = ({ camper }) => {
+const CamperDetailsItem = () => {
+  const camper = useSelector(selectCamperById);
+
   return (
     <section className={css.camperSection}>
       <h2 className={css.title}>{camper.name}</h2>

@@ -11,13 +11,13 @@ import { getCamperById } from '../../redux/campers/operations';
 import CamperDetailsItem from '../../components/CamperDetailsItem/CamperDetailsItem';
 import Loader from '../../components/Loader/Loader';
 import Menu from '../../components/Menu/Menu';
+const paths = ['features', 'reviews'];
 
 const CamperDetailsPage = () => {
   const dispatch = useDispatch();
   const camper = useSelector(selectCamperById);
   const isLoading = useSelector(selectIsLoading);
   const { id } = useParams();
-  const paths = ['features', 'reviews'];
 
   useEffect(() => {
     dispatch(getCamperById(id));
@@ -32,7 +32,7 @@ const CamperDetailsPage = () => {
         {isLoading && <Loader />}
         {camper && (
           <>
-            <CamperDetailsItem camper={camper} />
+            <CamperDetailsItem />
             <Menu paths={paths} />
             <Outlet />
           </>

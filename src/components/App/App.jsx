@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import Loader from '../Loader/Loader';
 import SharedLayout from '../SharedLayout/SharedLayout';
 import { HelmetProvider } from 'react-helmet-async';
+import { Toaster } from 'react-hot-toast';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const CatalogPage = lazy(() => import('../../pages/CatalogPage/CatalogPage'));
@@ -29,6 +30,7 @@ function App() {
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Suspense>
+        <Toaster />
       </SharedLayout>
     </HelmetProvider>
   );

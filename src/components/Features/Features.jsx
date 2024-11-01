@@ -3,6 +3,7 @@ import { selectCamperById } from '../../redux/campers/selectors';
 import CategoriesList from '../CategoriesList/CategoriesList';
 import css from './Features.module.css';
 import VehicleDetailsList from '../VehicleDetailsList/VehicleDetailsList';
+import BookingForm from '../BookingForm/BookingForm';
 
 const Features = () => {
   const camper = useSelector(selectCamperById);
@@ -18,6 +19,7 @@ const Features = () => {
           <VehicleDetailsList camper={camper} />
         </div>
       </div>
+      <BookingForm />
     </div>
   );
 };

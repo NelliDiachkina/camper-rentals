@@ -1,0 +1,80 @@
+.formSection {
+  width: 641px;
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  border-radius: 10px;
+  border: 1px solid var(--gray-light);
+}
+
+.formHead {
+  display: flex;
+  width: 527px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.input,
+.textArea {
+  width: 527px;
+  height: 60px;
+  padding: 18px;
+  border-radius: 12px;
+  background: var(--background);
+  border: none;
+  outline: none;
+}
+
+.input::placeholder,
+.textArea::placeholder {
+  color: var(--Gray);
+}
+
+.textArea {
+  height: 118px;
+  resize: none;
+  margin: 0;
+}
+
+.btn {
+  width: 166px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  border-radius: 200px;
+  background: var(--button);
+  color: var(--background-color);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.08px;
+  transition: background-color var(--animation);
+}
+
+.btn:hover {
+  background-color: var(--button-hover);
+}
+
+.errorMessage {
+  color: var(--button-hover);
+  padding: 8px;
+}

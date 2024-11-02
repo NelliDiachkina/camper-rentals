@@ -3,18 +3,36 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import toast from 'react-hot-toast';
 import css from './BookingForm.module.css';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import { useState } from 'react';
 
 const formSchema = yup.object().shape({
   name: yup.string().required('Required'),
   email: yup.string().email('Invalid email').required('Required'),
   comment: yup.string().required('Required'),
+  date: yup
+    .object()
+    .shape({
+      start: yup.date().nullable(),
+      end: yup.date().nullable(),
+    })
+    .test('date-range', 'Booking period is required', value => {
+      const { start, end } = value || {};
+      return start && end;
+    }),
 });
 
 const BookingForm = () => {
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+
   const {
     register,
     handleSubmit,
     reset,
+    setValue,
+    trigger,
     formState: { errors },
   } = useForm({
     mode: 'onTouched',
@@ -22,6 +40,7 @@ const BookingForm = () => {
       email: '',
       name: '',
       comment: '',
+      date: { start: null, end: null },
     },
     resolver: yupResolver(formSchema),
   });
@@ -32,6 +51,8 @@ const BookingForm = () => {
       { duration: 6000 }
     );
     reset();
+    setStartDate(null);
+    setEndDate(null);
   };
 
   return (
@@ -63,6 +84,28 @@ const BookingForm = () => {
           />
           {errors.email && (
             <p className={css.errorMessage}>{errors.email.message}</p>
+          )}
+        </label>
+        <label>
+          <DatePicker
+            className={css.input}
+            placeholderText="Booking date*"
+            selected={startDate}
+            onChange={dates => {
+              const [start, end] = dates;
+              setStartDate(start);
+              setEndDate(end);
+              setValue('date', { start, end }, { shouldValidate: true });
+              trigger('date');
+            }}
+            startDate={startDate}
+            endDate={endDate}
+            selectsRange={true}
+            dateFormat="dd.MM.yyyy"
+            shouldCloseOnSelect={false}
+          />
+          {errors.date && (
+            <p className={css.errorMessage}>{errors.date.message}</p>
           )}
         </label>
         <label>

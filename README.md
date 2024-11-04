@@ -1,8 +1,32 @@
-# React + Vite
+# Camper Rental Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+A web application for campervan rentals, where users can browse available
+campervan models, filter them by location and features, book selected models,
+leave reviews, and get information about upcoming trips.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
+
+- View a catalog of campervans.
+- Filter campers by location, engine type, size, availability of amenities (such
+  as kitchen, bathroom, air conditioning, water and more), price, rating, etc
+- Each camper has a dedicated page featuring detailed specifications, user
+  reviews, and an image gallery
+- Adding campers to your favorites list for easy storage and viewing
+- Ability to book a campervan for a specific time period
+- Add reviews for campervans
+
+## 🛠️ Tech Stack
+
+- **Vite** — lightning-fast development and optimized builds.
+- **React** — for building dynamic user interfaces.
+- **React Router** — to manage navigation across pages.
+- **Redux Toolkit** — for managing global state.
+- **Axios** — for making API requests.
+- **React Hook Form & Yup** — simple and powerful form validation.
+- **React Datepicker** — intuitive date selection for bookings.
+- **CSS Modules** — scoped styling for better maintainability.
+- **React Hot Toast** — for displaying notifications.
+
+## Pages

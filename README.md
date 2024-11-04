@@ -30,6 +30,7 @@ leave reviews, and get information about upcoming trips.
 - **React Hot Toast** — for displaying notifications.
 
 ## Pages
+
 ![1](https://github.com/user-attachments/assets/63ac2229-d058-4997-adca-6afc70d49dff)
 
 ![2](https://github.com/user-attachments/assets/69fd29f4-5335-465f-8436-0d8437a27a35)
@@ -40,6 +41,29 @@ leave reviews, and get information about upcoming trips.
 
 ![5](https://github.com/user-attachments/assets/fa277a85-2492-4c11-8bef-d8b108a217ae)
 
+## Installation
 
+Clone the repository to get started:
 
+```bash
+git clone https://github.com/NelliDiachkina/camper-rentals.git
+cd camper-rentals
+```
 
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+## Author
+
+Developed by Nelli Diachkina
+
+Email: nelli.diachkina@gmail.com

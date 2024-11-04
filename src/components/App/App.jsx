@@ -1,6 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
-import Header from '../Header/Header';
 import Loader from '../Loader/Loader';
 import SharedLayout from '../SharedLayout/SharedLayout';
 import { HelmetProvider } from 'react-helmet-async';
@@ -17,21 +16,20 @@ const CamperReview = lazy(() => import('../Reviews/Reviews.jsx'));
 function App() {
   return (
     <HelmetProvider>
-      <Header />
-      <SharedLayout>
-        <Suspense fallback={<Loader />}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<SharedLayout />}>
+            <Route index element={<HomePage />} />
             <Route path="/catalog" element={<CatalogPage />} />
             <Route path="/catalog/:id" element={<CamperDetailsPage />}>
               <Route path="features" element={<CamperFeatures />} />
               <Route path="reviews" element={<CamperReview />} />
             </Route>
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
-        </Suspense>
-        <Toaster />
-      </SharedLayout>
+          </Route>
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </Suspense>
+      <Toaster />
     </HelmetProvider>
   );
 }

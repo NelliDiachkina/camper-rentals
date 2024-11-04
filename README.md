@@ -17,7 +17,7 @@ leave reviews, and get information about upcoming trips.
 - Ability to book a campervan for a specific time period
 - Add reviews for campervans
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Vite** — lightning-fast development and optimized builds.
 - **React** — for building dynamic user interfaces.
@@ -30,3 +30,16 @@ leave reviews, and get information about upcoming trips.
 - **React Hot Toast** — for displaying notifications.
 
 ## Pages
+![1](https://github.com/user-attachments/assets/63ac2229-d058-4997-adca-6afc70d49dff)
+
+![2](https://github.com/user-attachments/assets/69fd29f4-5335-465f-8436-0d8437a27a35)
+
+![3](https://github.com/user-attachments/assets/3bff0065-5fb1-4a63-b4bb-da0dd8edfbb2)
+
+![4](https://github.com/user-attachments/assets/216043f1-cf71-4a06-bfd5-a6a5fb8165e8)
+
+![5](https://github.com/user-attachments/assets/fa277a85-2492-4c11-8bef-d8b108a217ae)
+
+
+
+
